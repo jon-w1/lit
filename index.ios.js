@@ -18,9 +18,9 @@ import {
 import HomeScreen from './common/components/HomeScreen';
 import ChatScreen from './common/components/ChatScreen';
 
-const ReactNativeStarter = TabNavigator({
+const LitApp = TabNavigator({
   Home: {screen: HomeScreen},
   Chat: {screen: ChatScreen},
 });
 
-AppRegistry.registerComponent('ReactNativeStarter', () => ReactNativeStarter);
+AppRegistry.registerComponent('LitApp', () => LitApp);
