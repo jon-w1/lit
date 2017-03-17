@@ -7,12 +7,12 @@ import {
   View
 } from 'react-native';
 
-const chatIcon = require('../assets/chats-icon.png')
+const chatIcon = require('../assets/history.png')
 
-class ChatScreen extends React.Component {
+class HistoryScreen extends React.Component {
   static navigationOptions = {
     tabBar: {
-      label: 'Chat',
+      label: 'History',
       icon: ({ tintColor }) => (
         <Image
           source={chatIcon}
@@ -20,7 +20,7 @@ class ChatScreen extends React.Component {
         />
       ),
     },
-  }
+  };
 
   render() {
     return (
@@ -43,9 +43,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   tabIcon: {
-    width: 26,
-    height: 26,
+    width: 17,
+    height: 17,
   },
 });
 
-module.exports = ChatScreen;
+module.exports = HistoryScreen;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  ActivityIndicator,
   Button,
   Image,
   StyleSheet,
@@ -21,12 +20,12 @@ const image_picker_options = {
 
 import Detector from './Detector';
 
-const homeIcon = require('../assets/home-icon.png');
+const homeIcon = require('../assets/browse-icon.png');
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
     tabBar: {
-      label: 'Home',
+      label: 'Browse',
       icon: ({ tintColor }) => (
         <Image
           source={homeIcon}
@@ -37,32 +36,11 @@ class HomeScreen extends React.Component {
   }
 
   render() {
-    let spinner = null;
-    if (this.props.screenProps.has_photo) {
-        spinner = (
-            <View>
-                <Text style={styles.searching}>Analyzing...</Text>
-                <ActivityIndicator
-                    animating={true}
-                    style={styles.spinner}
-                    color="white"
-                    size="large"
-                />
-                <Button onPress={this._onClose().bind(this)}>Close</Button>
-            </View>
-        );
-    }
     return (
       <View style={styles.container}>
         <Image source={require('../assets/logo.png')} style={styles.logo}/>
-        <Image source={this.props.screenProps.photo} style={styles.fullScreen}/>
-        {spinner}
       </View>
     );
-  }
-
-  _onClose() {
-      alert('Closed');
   }
 }
 
@@ -73,13 +51,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#00A4F4',
   },
-  fullScreen: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0
-  },
   tabIcon: {
     width: 20,
     height: 20,
@@ -87,14 +58,6 @@ const styles = StyleSheet.create({
   logo: {
     width: 128,
     height: 51
-  },
-  spinner: {
-    height: 80
-  },
-  searching: {
-    fontSize: 20,
-    color: 'white',
-    backgroundColor: 'transparent'
   }
 });
 
