@@ -38,7 +38,7 @@ class HomeScreen extends React.Component {
 
   render() {
     let spinner = null;
-    if (this.props.screenProps.has_photo) {
+    if (false) {
         spinner = (
             <View>
                 <Text style={styles.searching}>Analyzing...</Text>
@@ -55,8 +55,6 @@ class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Image source={require('../assets/logo.png')} style={styles.logo}/>
-        <Image source={this.props.screenProps.photo} style={styles.fullScreen}/>
-        {spinner}
       </View>
     );
   }
