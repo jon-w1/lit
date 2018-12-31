@@ -23,20 +23,21 @@ import {
 import MainApp from './common/components/MainApp';
 import CameraScreen from './common/components/CameraScreen';
 import MatchFound from './common/components/MatchFound';
+import CartScreen from './common/components/CartScreen';
 
 const StackNav = StackNavigator({
     Main: {screen: MainApp},
     Camera: {screen: CameraScreen},
-    Match: {screen: MatchFound}
+    Match: {screen: MatchFound},
+    Cart: {screen: CartScreen}
 }, {
     mode: 'modal',
-    headerMode: 'screen'
 });
 
 class LitApp extends React.Component {
     static navigationOptions = {
         title: 'Home',
-    }
+    };
 
     render() {
         return (
